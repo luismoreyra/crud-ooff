@@ -1,0 +1,11 @@
+/target/
+/.apt_generated/
+/.settings/
+/.sonar
+/.project
+/.classpath
+/.factoryPath
+/.sonar-project.properties
+
+*.iml
+/.idea

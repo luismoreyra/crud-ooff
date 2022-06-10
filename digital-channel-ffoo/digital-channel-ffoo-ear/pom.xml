@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>digital-channel-ffoo</artifactId>
+        <groupId>pe.com.interbank.digitalchannel.ffoo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+	<groupId>pe.com.interbank.digitalchannel.ffoo</groupId>
+    <artifactId>digital-channel-ffoo-ear</artifactId>
+    <version>1.2-SNAPSHOT</version>
+	<packaging>ear</packaging>
+    <name>digital channel ffoo ear</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <version>6</version>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <webXml>/src/main/webapp/WEB-INF/web.xml</webXml>
+
+                    <modules>
+                        <webModule>
+                            <groupId>pe.com.interbank.digitalchannel.ffoo</groupId>
+                            <artifactId>digital-channel-ffoo-web</artifactId>
+                            <bundleFileName>digital-channel-ffoo-1.2.war</bundleFileName>
+                            <contextRoot>/FFOOService</contextRoot>
+                        </webModule>
+                    </modules>
+                    <displayName>digital-channel-ffoo-ear</displayName>
+                    <!-- If I want maven to generate the application.xml, set this to true -->
+                    <generateApplicationXml>true</generateApplicationXml>
+
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+<!--         <finalName>digital-channel-ffoo-ear</finalName> -->
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>pe.com.interbank.digitalchannel.ffoo</groupId>
+            <artifactId>digital-channel-ffoo-web</artifactId>
+            <version>1.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+</project>
